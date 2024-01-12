@@ -2,10 +2,8 @@ package com.sorawee.fileUpload.auth.service.implement;
 
 import com.sorawee.fileUpload.auth.model.AuthRequest;
 import com.sorawee.fileUpload.auth.model.AuthResponse;
-import com.sorawee.fileUpload.auth.repository.UserRepository;
 import com.sorawee.fileUpload.auth.service.AuthenticationService;
 import com.sorawee.fileUpload.auth.service.JwtService;
-import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;

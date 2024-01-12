@@ -9,7 +9,6 @@ public class FileUploadResponse {
 
     private String fileName;
     private String filePath;
-    private String fileType;
     private String fileSize;
     private LocalDateTime createdDate;
 

@@ -17,13 +17,13 @@ public class UploadFile {
     @Column(name = "file_name", nullable = false)
     private String fileName;
 
+    @Column(name = "file_path")
+    private String filePath;
+
     @Column(name = "file_size")
     private Long fileSize;
 
     @Column(name = "created_date")
     private LocalDateTime createdDate;
-
-    @Column(name = "file_path")
-    private String filePath;
 
 }

@@ -10,6 +10,6 @@ import org.springframework.data.repository.query.Param;
 public interface FileUploadRepository extends CrudRepository<UploadFile, Long> {
 
     @Query(value = "SELECT * FROM [UPLOADED_FILE_HISTORY] "
-            + " WHERE FILE_NAME = :fileName ", nativeQuery = true)
+            + " WHERE FILE_NAME like :fileName% ", nativeQuery = true)
     UploadFile findByName(@Param("fileName") String fileName);
 }
