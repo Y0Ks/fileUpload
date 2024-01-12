@@ -1,3 +1,4 @@
+
 # File Upload Service
 
 ## Overview
@@ -11,6 +12,7 @@ File Upload Service is a demo project.
 5. **File Storage**: Files are stored in a specified directory (default: `D:\uploadedFile`).
 6. **Database Integration**: Integration with MSSQL for storing file metadata.
 7. **Email Notification**: Sends email notifications on successful file uploads (SMTP configuration required).
+8. **Logging**: Keep log files of each day in a specified directory (default: `D:\log\fileUpload`).
 
 ## Getting Started
 
