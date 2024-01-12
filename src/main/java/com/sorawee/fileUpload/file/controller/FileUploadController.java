@@ -12,7 +12,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/api/files")
+@RequestMapping("/api/v1/file/")
 public class FileUploadController {
 
     private final FileUploadService fileUploadService;
@@ -21,7 +21,7 @@ public class FileUploadController {
         this.fileUploadService = fileUploadService;
     }
 
-    @GetMapping(value = "/file", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/get", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> getFile(@RequestParam(name = "fileName", required = false) String fileName) {
         if (fileName == null) {
             ErrorResponse errorResponse = new ErrorResponse("Parameter is empty");
@@ -44,8 +44,8 @@ public class FileUploadController {
         }
     }
 
-    @PostMapping(path = "/file")
-    public ResponseEntity<?> postFile(@RequestParam("file") MultipartFile file) {
+    @PostMapping(path = "/upload")
+    public ResponseEntity<?> uploadFile(@RequestParam("file") MultipartFile file) {
 
         try {
             if (file == null || file.isEmpty()) {
@@ -69,7 +69,7 @@ public class FileUploadController {
         }
     }
 
-    @PutMapping(value = "/file", produces = MediaType.APPLICATION_JSON_VALUE)
+    @PutMapping(value = "/put", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<ErrorResponse> putFile() {
 
         ErrorResponse errorResponse = new ErrorResponse("PUT method is not allowed.");
@@ -78,7 +78,7 @@ public class FileUploadController {
                 .body(errorResponse);
     }
 
-    @DeleteMapping(value = "/file", produces = MediaType.APPLICATION_JSON_VALUE)
+    @DeleteMapping(value = "/delete", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<ErrorResponse> deleteFile() {
 
         ErrorResponse errorResponse = new ErrorResponse("DELETE method is not allowed.");
